@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { AppContext } from './Context';
+import { AppContext } from './Context';
 import DataView from './DataView';
 import Loader from './Loader';
 import strings from '../utils/strings.utils';
@@ -35,7 +35,7 @@ const Modal = (): JSX.Element => {
         };
     });
 
-    const closeModal = () => { 
+    const closeModal = () => {
         setCurrentData(null), setShowModal(false);
     }
 
@@ -64,13 +64,13 @@ const Modal = (): JSX.Element => {
                     &times;
                 </span>
                 <div id="lpb-modal-content-body">
-                    { loader 
+                    { loader 
                         ? <Loader />
                         : <DataView {...currentData} />
                     }
                 </div>
                 <div id="modal-desc" className="screenreader-text">
-                    { strings.modalDesc }
+                    { strings.modalDesc }
                 </div>
             </div>
         </div>

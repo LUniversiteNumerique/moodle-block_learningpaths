@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ResourceData } from '../types/Data';
+import type { ResourceData } from '../types/Data';
 
 export const createHeader = (obj: Object): JSX.Element[] => {
     return Object.entries(obj).map(([_, v]) => <div className="cell th">{ v }</div>);
@@ -12,7 +12,7 @@ export const createRow = (
     const rows = Object.keys(object).map(key => {
         return key != 'url' 
             ?   <div className={`cell lpb-${name}-${key}`}>
-                    { key === 'name'
+                    { key === 'name'
                         ? <a href={object['url']} target="_blank">{object['name']}</a>
                         : object[key]
                     }

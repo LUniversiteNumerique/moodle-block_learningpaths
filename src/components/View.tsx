@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Field from './Field';
-import type { AppProps } from '../types/App';
-import type { Field as FieldProps } from '../types/Field';
+import type { AppProps } from '../types/App';
+import type { Field as FieldProps } from '../types/Field';
 
 
 const View = (params: AppProps) => {

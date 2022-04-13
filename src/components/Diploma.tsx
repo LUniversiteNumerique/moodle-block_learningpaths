@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { AppContext } from './Context';
-import type { DataProps } from '../types/Data';
+import { AppContext } from './Context';
+import type { DataProps } from '../types/Data';
 
 
 interface Params {

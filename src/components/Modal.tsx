@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { AppContext } from './Context';
+import { AppContext } from './Context';
 import DataView from './DataView';
 import Loader from './Loader';
 
@@ -26,7 +26,7 @@ const Modal = (): JSX.Element => {
         return () => document.removeEventListener("click", handleClick);
     }, []);
 
-    const closeModal = () => { 
+    const closeModal = () => {
         setCurrentData(null), setShowModal(false);
     }
 
@@ -43,7 +43,7 @@ const Modal = (): JSX.Element => {
                     &times;
                 </span>
                 <div id="lpb-modal-content-body">
-                    { loader 
+                    { loader 
                         ? <Loader />
                         : <DataView {...currentData} />
                     }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import strings from '../utils/strings.utils';
 import { createRow, createHeader } from '../utils/table.utils';
-import type { UeData, ResourceData } from '../types/Data';
+import type { UeData, ResourceData } from '../types/Data';
 
 const Ue = (ue: UeData) => {
     return (

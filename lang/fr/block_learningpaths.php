@@ -25,3 +25,7 @@ $string['pluginname'] = 'Parcours de L\'Université Numérique';
 $string['apiurl'] = 'API URL';
 $string['apiurl_desc'] = 'URL de l\'API des Parcours de L\'Université Numérique';
 $string['body_text'] = 'Texte du bloc';
+$string['learningpaths:editadvance'] = 'Advanced editing within block';
+$string['learningpaths:view'] = 'View Learningpaths block';
+$string['learningpaths:myaddinstance'] = 'Add a new Learningpaths block to the dashboard';
+$string['learningpaths:addinstance'] = 'Add a new Learningpaths block';

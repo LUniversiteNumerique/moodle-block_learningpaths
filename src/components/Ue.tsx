@@ -10,7 +10,7 @@ const Ue = (ue: UeData) => {
             <div className="column header">
                 { createHeader(strings.thead) }
             </div>
-            { ue.resources 
+            { ue.resources != undefined && Object.keys(ue.resources).length > 0
                 && ue.resources.map((resource: ResourceData): JSX.Element => {
                 return createRow(resource, "resource")
             }) }

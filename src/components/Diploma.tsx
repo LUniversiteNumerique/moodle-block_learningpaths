@@ -21,7 +21,7 @@ const Diploma = (params: Params): JSX.Element => {
     }
 
     const fetchAPI = async (id: number): Promise<DataProps> => {
-        const response = await fetch(`${apiUrl}/data/${id}`);
+        const response = await fetch(`${apiUrl}/filter/id=${id}&type=moodle`);
         return await response.json();
     };
 

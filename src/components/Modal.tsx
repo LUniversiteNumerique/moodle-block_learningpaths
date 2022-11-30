@@ -11,7 +11,7 @@ const Modal = (): JSX.Element => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (currentData && currentData != {} && currentData != []) {
+        if (currentData) {
             setShowModal(true);
             modalRef.current?.focus();
         }

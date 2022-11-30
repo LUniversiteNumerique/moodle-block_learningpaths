@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Ue from './Ue';
-import type { YearData } from '../types/Data';
+import type { UeData, YearData } from '../types/Data';
 
 
 const Year = (year: YearData) => {
@@ -26,8 +26,8 @@ const Year = (year: YearData) => {
                 {year.name}
             </h5>
             <div className={`flex-table ${selected ? 'active' : ''}`}>
-                { year.ue && year.ue.map((ue : any) => {
-                    return ue.resources && ue.name
+                { year.ue && year.ue.map((ue : UeData) => {
+                    return ue.resources != undefined && Object.keys(ue.resources).length > 0 && ue.name != undefined
                         ?   <Ue {...ue} /> 
                         :   null
                 }) }

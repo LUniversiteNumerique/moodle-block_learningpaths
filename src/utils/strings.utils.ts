@@ -3,7 +3,8 @@ export default {
     thead: {
         resource: "Ressource",
         types: "Type",
-        volume: "Volume"
+        volume: "Volume",
+        licence: "Licence"
     },
     modalDesc: "Cette fenêtre surgissante affiche les parcours et contenus du diplôme sélectionné dans la liste."
 }

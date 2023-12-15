@@ -18,14 +18,14 @@
  * Version file
  *
  * @package    block_learningpaths
- * @copyright  2022 Pierre Duverneix
+ * @copyright  2023 Pierre Duverneix
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version    = 2022041300;
+$plugin->version    = 2023121500;
 $plugin->requires   = 2016052300;
-$plugin->release    = '0.1.0';
+$plugin->release    = '0.1.1';
 $plugin->component  = 'block_learningpaths';
 $plugin->maturity   = MATURITY_STABLE;

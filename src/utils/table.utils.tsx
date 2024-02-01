@@ -17,7 +17,7 @@ export const createRow = (
                     : key === 'licence'
                         ? object[key] != null
                             ? Object.values(object[key]).map((licence: any) =>
-                                <img src={licence['image']} width="20" title={licence['name']} alt={licence['name']} />
+                                <img src={licence['image']} width="200" title={licence['name']} alt={licence['name']} />
                             )
                             : ""
                         : object[key]

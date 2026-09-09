@@ -25,6 +25,9 @@ defined('MOODLE_INTERNAL') || die();
  */
 
 class block_learningpaths extends block_base {
+    /** @var string */
+    public $blockname = null;
+
     public function init() {
         $this->blockname = get_class($this);
         $this->title = get_string('pluginname', 'block_learningpaths');

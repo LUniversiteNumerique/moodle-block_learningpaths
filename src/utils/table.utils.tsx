@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { ResourceData } from '../types/Data';
+import MoodleIcon from '../utils/moodle.png';
 
 export const createHeader = (obj: Object): JSX.Element[] => {
     return Object.entries(obj).map(([_, v]) => <div className="cell th">{v}</div>);
@@ -9,20 +10,44 @@ export const createRow = (
     object: ResourceData,
     name: string
 ): JSX.Element => {
+    
     const rows = Object.keys(object).map(key => {
-        return key != 'url'
+        return key != 'url' && key !== 'moodle'
             ? <div className={`cell lpb-${name}-${key}`}>
-                {key === 'name'
-                    ? <a href={object['url']} target="_blank" rel="noreferrer">{object['name']}</a>
-                    : key === 'licence'
-                        ? object[key] != null
-                            ? Object.values(object[key]).map((licence: any) =>
-                                licence['image']
-                                    ? <img src={licence['image']} width="80" title={licence['name']} alt={licence['name']} />
-                                    : <span className="text-small">{licence['name']}</span>
-                            )
-                            : ""
-                        : object[key]
+                {
+                    key === 'name'
+                        ? <>
+                            {object['moodle'] && (
+                                <span className="moodle-badge">
+                                    <img
+                                        src={MoodleIcon}
+                                        alt="Moodle"
+                                        className="moodle-icon"
+                                        height="18"
+                                    />
+                                    &nbsp;
+                                </span>
+                            )}
+                            <a href={object['url']} target="_blank" rel="noreferrer">
+                                {object['name']}
+                            </a>
+                        </>
+                        : key === 'licence'
+                            ? object[key] != null
+                                ? Object.values(object[key]).map((licence: any) =>
+                                    licence['image']
+                                        ? <img
+                                            src={licence['image']}
+                                            width="80"
+                                            title={licence['name']}
+                                            alt={licence['name']}
+                                        />
+                                        : <span className="text-small">
+                                            {licence['name']}
+                                        </span>
+                                )
+                                : ""
+                            : object[key]
                 }
             </div>
             : null;

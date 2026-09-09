@@ -17,7 +17,11 @@ const config = {
 				test: /\.ts(x)?$/,
 				use: "ts-loader",
 				exclude: /node_modules/,
-			}
+			},
+            {
+                test: /\.png$/i,
+                type: 'asset/inline',
+            }
         ]
     },
     resolve: {

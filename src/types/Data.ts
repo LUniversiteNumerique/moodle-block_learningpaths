@@ -27,5 +27,6 @@ export type ResourceData =
     type: string;
     volume: string;
     url: string;
+    creationdate: string;
     licence: string;
   };

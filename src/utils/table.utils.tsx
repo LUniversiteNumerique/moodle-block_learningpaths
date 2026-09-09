@@ -10,14 +10,24 @@ export const createRow = (
     object: ResourceData,
     name: string
 ): JSX.Element => {
-    
-    const rows = Object.keys(object).map(key => {
-        return key != 'url' && key !== 'moodle'
-            ? <div className={`cell lpb-${name}-${key}`}>
+    const keys = Object.keys(object)
+    .filter(key => key !== 'url' && key !== 'moodle' && key !== 'creationdate');
+
+    const licenceIndex = keys.indexOf('licence');
+
+    if (licenceIndex !== -1) {
+        keys.splice(licenceIndex, 0, 'creationdate');
+    } else {
+        keys.push('creationdate');
+    }
+
+    const rows = keys.map(key => {
+        return (
+            <div className={`cell lpb-${name}-${key}`}>
                 {
                     key === 'name'
                         ? <>
-                            {object['moodle'] && (
+                            {object.moodle && (
                                 <span className="moodle-badge">
                                     <img
                                         src={MoodleIcon}
@@ -25,32 +35,46 @@ export const createRow = (
                                         className="moodle-icon"
                                         height="18"
                                     />
-                                    &nbsp;
                                 </span>
                             )}
-                            <a href={object['url']} target="_blank" rel="noreferrer">
-                                {object['name']}
+                            <a
+                                href={object.url}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {object.name}
                             </a>
+                            {typeof object.info === 'string' && object.info.trim() !== '' && (
+                                <span
+                                    className="resource-info"
+                                    title={object.info}
+                                >
+                                    i
+                                </span>
+                            )}
                         </>
                         : key === 'licence'
                             ? object[key] != null
                                 ? Object.values(object[key]).map((licence: any) =>
-                                    licence['image']
+                                    licence.image
                                         ? <img
-                                            src={licence['image']}
+                                            src={licence.image}
                                             width="80"
-                                            title={licence['name']}
-                                            alt={licence['name']}
+                                            title={licence.name}
+                                            alt={licence.name}
                                         />
                                         : <span className="text-small">
-                                            {licence['name']}
+                                            {licence.name}
                                         </span>
                                 )
                                 : ""
-                            : object[key]
+                            : key === 'creationdate'
+                                ? object[key] ?? ''
+                                : object[key]
                 }
             </div>
-            : null;
+        );
     });
+
     return <div className="column">{rows}</div>;
 };

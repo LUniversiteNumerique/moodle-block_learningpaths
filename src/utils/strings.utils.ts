@@ -4,6 +4,7 @@ export default {
         resource: "Ressource",
         types: "Type",
         volume: "Volume",
+        creationdate: "Date de création",
         licence: "Licence"
     },
     modalDesc: "Cette fenêtre surgissante affiche les parcours et contenus du diplôme sélectionné dans la liste."

@@ -303,6 +303,19 @@
                             align-items: flex-start;
                             flex-wrap: nowrap;
 
+                            .cell,
+                            .th {
+                                box-sizing: border-box;
+                                flex: 0 0 auto; // empêche grow ET shrink
+                            }
+
+                            // Largeurs communes aux 5 colonnes, sur .cell ET .th
+                            .cell:nth-child(1), .th:nth-child(1) { flex-basis: 40%; width: 40%; } // Ressource
+                            .cell:nth-child(2), .th:nth-child(2) { flex-basis: 15%; width: 15%; } // Type
+                            .cell:nth-child(3), .th:nth-child(3) { flex-basis: 15%; width: 15%; } // Volume
+                            .cell:nth-child(4), .th:nth-child(4) { flex-basis: 20%; width: 20%; } // Date création
+                            .cell:nth-child(5), .th:nth-child(5) { flex-basis: 10%; width: 10%; } // Licence
+                        
                             &:nth-child(even) {
                                 background-color: @greyBgAlt;
                             }
@@ -310,6 +323,8 @@
                             &.header {
                                 .th {
                                     .colorBgBorder(0, 2px, 0, 2px, white, @greenBg, white);
+                                    box-sizing: border-box;
+                                    padding: .25em .75em;
 
                                     &:first-child {
                                         border-width: 0 2px 2px 0;
@@ -323,20 +338,14 @@
 
                             .cell {
                                 .tableBorder();
-                                width: 25%;
-                                padding: .25em .75em;
+                                box-sizing: border-box;
+                                padding: .25em 0.75em .25em 0;
                                 font-size: .85em;
-
-                                &:first-child {
-                                    width: 60%;
-                                }
-
-                                &:last-child {
-                                    width: 10%;
-                                }
 
                                 &.lpb-resource-name {
                                     font-size: 1em;
+                                    display: flex;
+                                    align-items: center;
 
                                     .moodle-badge {
                                         margin-right: 8px;
@@ -345,6 +354,34 @@
                                     a {
                                         color: @green;
                                         text-decoration: underline;
+                                    }
+
+                                    .resource-info {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        width: 18px;
+                                        height: 18px;
+
+                                        margin-left: auto;
+
+                                        background: @blue;
+                                        color: #fff;
+
+                                        border-radius: 50%;
+
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                        font-style: normal;
+                                        font-style: italic;
+                                        font-family: serif;
+
+                                        line-height: 1;
+
+                                        cursor: help;
+                                        flex-shrink: 0;
+                                        
                                     }
                                 }
 

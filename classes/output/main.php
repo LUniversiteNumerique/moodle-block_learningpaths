@@ -23,6 +23,7 @@
  */
 
 namespace block_learningpaths\output;
+
 defined('MOODLE_INTERNAL') || die();
 
 use renderable;
@@ -31,6 +32,9 @@ use renderer_base;
 use stdClass;
 
 class main implements renderable, templatable {
+    /** @var string */
+    public $apiUrl = null;
+
     /**
      * Constructor.
      */

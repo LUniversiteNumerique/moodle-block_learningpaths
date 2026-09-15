@@ -11,7 +11,12 @@ export const createRow = (
     name: string
 ): JSX.Element => {
     const keys = Object.keys(object)
-    .filter(key => key !== 'url' && key !== 'moodle' && key !== 'creationdate');
+        .filter(key =>
+            key !== 'url' &&
+            key !== 'moodle' &&
+            key !== 'creationdate' &&
+            key !== 'info'
+        );
 
     const licenceIndex = keys.indexOf('licence');
 

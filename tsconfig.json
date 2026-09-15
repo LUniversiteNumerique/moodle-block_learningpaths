@@ -1,31 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "jsx": "react",
-        "module": "es6",
-        "moduleResolution": "node",
-        "allowJs": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "noImplicitThis": true,
-        "alwaysStrict": true,
-        "skipLibCheck": true,
-        "removeComments": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
-    },
-    "types": [
-        "node"
-    ],
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules", 
-        "build"
-    ]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es2017.object"],
+    "jsx": "react",
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "types": ["node"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
 }

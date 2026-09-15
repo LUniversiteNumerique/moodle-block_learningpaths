@@ -12,7 +12,7 @@ const View = (params: AppProps) => {
     }, []);
 
     const fetchAPI = async (): Promise<Array<FieldProps>> => {
-        const response = await fetch(`${params.apiUrl}/fields/all`);
+        const response = await fetch(`${params.apiUrl}/fields/all/moodle`);
         const data = await response.json();
         return data.fields;
     };
